@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<header class = "rounded m-2">
+    <h1 class = "text-center p-2">Weather Dashboard</h1>
+</header>
+
+<body>
+
+    <div class = "col-4 sideNav">
+        <div class="card sideNavEl p-2">
+            <h5 class="card-header text-uppercase text-center">Search By City</h5>
+            <form id="user-form" class="mx-auto card-body">
+              <input name="city" id="cityInput" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn border searchBtn">Get Weather</button>
+            </form>
+        </div>
+        <div class = "p-2 sideNavEl card prevSearch">
+            <h5 class="text-center card-header text-uppercase">Previous Searches</h5>
+            <ul id="prevCityList" class="list-group list-group-flush">
+                
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="weatherSide">
+        <div class="currentWeather">
+            <h5 id="currentDay"></h5>
+
+        </div>
+    </div>
+
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="app.js"></script>
+</html>
+
