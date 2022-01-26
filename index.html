@@ -17,28 +17,73 @@
 
 <body>
 
-    <div class = "col-4 sideNav">
-        <div class="card sideNavEl p-2">
-            <h5 class="card-header text-uppercase text-center">Search By City</h5>
-            <form id="user-form" class="mx-auto card-body">
-              <input name="city" id="cityInput" type="text" autofocus="true" class="form-input" />
-              <button type="submit" class="btn border searchBtn">Get Weather</button>
-            </form>
-        </div>
-        <div class = "p-2 sideNavEl card prevSearch">
-            <h5 class="text-center card-header text-uppercase">Previous Searches</h5>
-            <ul id="prevCityList" class="list-group list-group-flush">
-                
-            </ul>
 
-        </div>
-    </div>
+    <div class="d-flex" >
 
-    <div class="weatherSide">
-        <div class="currentWeather">
-            <h5 id="currentDay"></h5>
-
+        <div class = "col-4 sideNav">
+            <div class="card sideNavEl p-2">
+                <h5 class="card-header text-uppercase text-center">Search By City</h5>
+                <form id="user-form" class="mx-auto card-body">
+                  <input name="city" id="cityInput" type="text" autofocus="true" class="form-input" />
+                  <button type="submit" class="btn border searchBtn p-1 m-2">Get Weather</button>
+                </form>
+            </div>
+            <div class = "p-2 sideNavEl card prevSearch">
+                <h5 class="text-center card-header text-uppercase">Previous Searches</h5>
+                <ul id="prevCityList" class="list-group list-group-flush">
+                    
+                </ul>
+    
+            </div>
         </div>
+    
+        <div class="col-8 weatherSide">
+            <div id="currentWeather">
+                <h5 class = "card-header text-uppercase text-center" id="currentDay"></h5>
+                <p id = "temp"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+    
+            </div>
+            <div id="forecast" class="row">
+                <div class="">
+                    <h5 class = "card-header text-uppercase text-center" id="forecastDay0"></h5>
+                    <p id = "temp0"></p>
+                    <p id="wind0"></p>
+                    <p id="humidity0"></p>
+                </div>
+
+                <div class="">
+                    <h5 class = "card-header text-uppercase text-center" id="forecastDay1"></h5>
+                    <p id = "temp1"></p>
+                    <p id="wind1"></p>
+                    <p id="humidity1"></p>
+                </div>
+
+                <div class="">
+                    <h5 class = "card-header text-uppercase text-center" id="forecastDay2"></h5>
+                    <p id = "temp2"></p>
+                    <p id="wind2"></p>
+                    <p id="humidity2"></p>
+                </div>
+
+                <div class="">
+                    <h5 class = "card-header text-uppercase text-center" id="forecastDay3"></h5>
+                    <p id = "temp3"></p>
+                    <p id="wind3"></p>
+                    <p id="humidity3"></p>
+                </div>
+
+                <div class="">
+                    <h5 class = "card-header text-uppercase text-center" id="forecastDay4"></h5>
+                    <p id = "temp4"></p>
+                    <p id="wind4"></p>
+                    <p id="humidity4"></p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     

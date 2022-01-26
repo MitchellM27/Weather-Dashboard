@@ -38,6 +38,7 @@ searchButton.on("click", function(event) {
     renderCitiesEl();
 
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=imperial';
+    var forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid='+ apiKey;
 
     console.log(weatherURL)
 
@@ -46,22 +47,39 @@ searchButton.on("click", function(event) {
         return response.json();
     }).then (data => {
         console.log(data)
-        console.log(data.main.temp)
+        var lat = (data.coord.lat)
+        var long = (data.coord.lon)
 
         var today = moment();
+        $("#currentWeather").attr("class", "card");
         $("#currentDay").text(city + ": " + today.format("MMM Do, YYYY"));
-
-
-
+        $("#temp").text("Temp: " + data.main.temp + "°F");
+        $("#wind").text("Wind: " + data.wind.speed + "MPH");
+        $("#humidity").text("Humidity: " + data.main.humidity + " %");
 
     }).catch (err => {
         console.error(err);
     });
 
+    fetch(forecastURL)
+    .then(response => {
+        return response.json();
+    }).then (data => {
+        console.log(data)
+        console.log(data.list[0]["dt_txt"])
+        for (i=0; i<5; i++) {
+            $("#forecast").attr("class", "card");
+            $("#forecastDay"+i).text(city + ": " + data.list[(i+1)*8]["dt_txt"]);
+            $("#temp"+i).text("Temp: " + data.list[(i+1)*8].main.temp);
+            $("#wind"+i).text("Wind: " + data.list[(i+1)*8].wind.speed);
+            $("#humidity"+i).text("Humidity: " + data.list[(i+1)*8].main.humidity);
+        }
+    }).catch (err => {
+        console.error(err);
+    });
+});
 
-    
 
-});   
 
 function renderCitiesEl() {
     citiesListEl.empty();
